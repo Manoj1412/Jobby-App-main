@@ -4,6 +4,33 @@
   align-items: center;
   background-color: #202020;
 }
+/* Add underline hover effect for nav links */
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #4caf50;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #4caf50;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+  left: 0;
+}
 
 .nav-content {
   display: flex;
@@ -132,4 +159,25 @@
   .nav-mobile-btn {
     display: none;
   }
+}
+/* Adjust navbar height and make it sticky */
+.nav-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #202020;
+  position: sticky;
+  top: 0; 
+  z-index: 1000; 
+  padding: 5px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1110px;
+  padding: 10px 0;
 }
